@@ -1,0 +1,27 @@
+The following variables are stored in the Matlab data file:
+- initial_state: the initial state of the vehicle as [x, y]
+- numT: the number of time steps
+- measurements: 
+  o the position measurements of the vehicle
+  o dimensions: [numT x 2] matrix
+  o format for each row: [x y]
+  o note: there is no measurement available for the initial_state
+- delta_motion: 
+   o the absolute (no velocities) motion delta of the vehicle
+     for one discrete time step
+   o dimensions: [numT x 2] matrix
+   o format for each row: [delta_x delta_y]
+   o note: the first row represents the delta motion from time step
+           0 to time step 1
+- true_poses:
+  o the ground-truth vehicle poses
+  o dimensions: [numT x 2] matrix
+  o format for each row: [true_x true_y]
+  o note: this is only used for evaluation of the filter
+- noise_system:
+  o the covariance matrix of the system noise, i.e. the vehicle motion
+  o dimensions: [2 x 2] matrix
+- noise_measurements:
+  o the covariance matrix of the measurement noise, i.e. the position
+    measurement
+  o dimensions: [2 x 2] matrix
